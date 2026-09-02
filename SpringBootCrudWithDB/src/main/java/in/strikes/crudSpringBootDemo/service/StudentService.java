@@ -31,7 +31,7 @@ public class StudentService {
 
     public Student getStudentById(Long id) {
         System.out.println("Inside Student Service - Get By ID");
-        return studentRepository.findById(id).get();
+        return studentRepository.findByIdAndActiveTrue(id);
     }
 
     public Student updateStudent(Long id, Student studentReq) {
@@ -44,6 +44,7 @@ public class StudentService {
         student.setEmail(studentReq.getEmail());
         student.setAge(studentReq.getAge());
         student.setRollNo(studentReq.getRollNo());
+        student.setActive(studentReq.isActive());
 
 
         // Save updated entity

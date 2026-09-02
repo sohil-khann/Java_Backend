@@ -14,4 +14,5 @@ import java.util.concurrent.atomic.AtomicLong;
 @Repository
 public interface StudentRepository extends JpaRepository<Student, Long> {
 
+    public Student findByIdAndActiveTrue(Long id);
 }

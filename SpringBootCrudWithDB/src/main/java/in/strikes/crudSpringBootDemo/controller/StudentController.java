@@ -36,8 +36,8 @@ public class StudentController {
         return ResponseEntity.status(200).body(students);
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<Student> getStudentById(@PathVariable Long id) {
+    @GetMapping("/")
+    public ResponseEntity<Student> getStudentById(@RequestParam Long id) {
         System.out.println("Inside Student Controller - Get By ID");
         Student student = studentService.getStudentById(id);
         if (student != null) {

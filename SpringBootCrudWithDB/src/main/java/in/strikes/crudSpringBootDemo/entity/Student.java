@@ -15,6 +15,7 @@ public class Student {
     private int age;
     private String email;
     private int rollNo;
+    private boolean active;
     private String subject;
 
     public Long getId() {
@@ -65,8 +66,12 @@ public class Student {
         this.subject = subject;
     }
 
-    @Override
-    public String toString(){
-        return "Student [id=" + id + ", name=" + name + ", age=" + age + ", email=" + email + "]";
+
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
     }
 }
